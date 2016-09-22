@@ -1,32 +1,33 @@
 # PsDataCli
-Web client for presenting data from REST service application PsDataSb.
+Web client for presenting data from REST service application [PsDataSb][].
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.15.
 
 ##Prerequisites
-- Some running REST endpoint (see PsDataSb repo).
-- Some instance of PrestaShop to test (e.g. installed on localhost).
+- Some running REST endpoint (see [PsDataSb][] repo).
+- Some instance of [PrestaShop][] to test (e.g. installed on localhost).
 
 
 ## Usage
 
 ### Run application
-![start_page.png](https://bitbucket.org/repo/9LqrLo/images/728222632-start_page.png)
+
+![start_page.png](https://lab.wesolucky.pl/github/start_page.png)
 
 ### Add new shop
-![add_new_shop_form.png](https://bitbucket.org/repo/9LqrLo/images/4054599460-add_new_shop_form.png)
+![add_new_shop_form.png](https://lab.wesolucky.pl/github/add_new_shop_form.png)
 
 ### After success of previous step
-![after_save_shop_success.png](https://bitbucket.org/repo/9LqrLo/images/4250909530-after_save_shop_success.png)
+![after_save_shop_success.png](https://lab.wesolucky.pl/github/after_save_shop_success.png)
 
 ### First look at products list
-![first_look_products_list.png](https://bitbucket.org/repo/9LqrLo/images/571094697-first_look_products_list.png)
+![first_look_products_list.png](https://lab.wesolucky.pl/github/first_look_products_list.png)
 
 ### Get MySQL products
-![get_mysql_products_success.png](https://bitbucket.org/repo/9LqrLo/images/1913608407-get_mysql_products_success.png)
+![get_mysql_products_success.png](https://lab.wesolucky.pl/github/get_mysql_products_success.png)
 
 ### View product details
-![view_product_details.png](https://bitbucket.org/repo/9LqrLo/images/130171313-view_product_details.png)
+![view_product_details.png](https://lab.wesolucky.pl/github/view_product_details.png)
 
 ## Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
@@ -55,3 +56,6 @@ Run `ng github-pages:deploy` to deploy to Github Pages.
 ## Further help
 
 To get more help on the `angular-cli` use `ng --help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+[PsDataSb]: https://github.com/DevWesolucky/ps-data-sb
+[PrestaShop]: https://www.prestashop.com
