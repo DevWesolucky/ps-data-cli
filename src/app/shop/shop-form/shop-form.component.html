@@ -1,0 +1,62 @@
+<div class="app-component">
+  
+  <h3>Shop Form</h3>
+  <div class="shop-form" [hidden]="dataState == 'DATA_LOADING'">
+
+    <form (ngSubmit)="onSubmit()" #shopForm="ngForm">
+
+      <div class="form-group">
+        <label for="domain">Domain</label>
+        <input type="text" class="form-control" id="domain" required
+        [(ngModel)]="shop.domain" name="domain">
+      </div>
+      <div class="form-group">
+        <label for="host">host (MySQL)</label>
+        <input type="text" class="form-control" id="host" required
+        [(ngModel)]="shop.host" name="host">
+      </div>
+      <div class="form-group">
+        <label for="port">port (MySQL)</label>
+        <input type="text" class="form-control" id="port" required
+        [(ngModel)]="shop.port" name="port">
+      </div>
+      <div class="form-group">
+        <label for="user">user (MySQL)</label>
+        <input type="text" class="form-control" id="user" required
+        [(ngModel)]="shop.user" name="user">
+      </div>
+      <div class="form-group">
+        <label for="password">password (MySQL)</label>
+        <input type="password" class="form-control" id="password" required
+        [(ngModel)]="shop.password" name="password">
+      </div>
+      <div class="form-group">
+        <label for="dbName">db name (MySQL)</label>
+        <input type="text" class="form-control" id="hdbNameost" required
+        [(ngModel)]="shop.dbName" name="dbName">
+      </div>
+      <br>
+      <div class="form-group">
+        <label class="form-check-label" style="font-size: 14px; margin-left:10px">
+          <input class="form-check-input" type="checkbox" 
+                name="reverseIdInUrl"  [(ngModel)]="shop.reverseIdInUrl">
+          Reverse order (name-id) in URL
+        </label>
+      </div>
+      <br>
+
+
+      <div [hidden]="dataState != 'DATA_FAILED'">
+          <span class="failureMessage">{{failureMsg}}</span><br><br>
+      </div>
+
+      <button type="submit" class="btn btn-warning" [disabled]="!shopForm.form.valid">Submit</button>
+
+    </form>
+  </div>
+
+  <div [hidden]="dataState != 'DATA_LOADING'">
+      Loading data.
+  </div>
+
+</div>
