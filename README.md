@@ -1,5 +1,7 @@
 # PsDataCli
-Web client for presenting data from REST service application [PsDataSb][].
+Web client for presenting data from REST service application (custom PrestaShop data). You can use one of two option as REST endpoint:
+- [PsDataNode][] JavaScript (Node.js) server side application.
+- [PsDataSb][] Java (Spring Boot) application.
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.15.
 
@@ -58,4 +60,5 @@ Run `ng github-pages:deploy` to deploy to Github Pages.
 To get more help on the `angular-cli` use `ng --help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
 [PsDataSb]: https://github.com/DevWesolucky/ps-data-sb
+[PsDataNode]: https://github.com/DevWesolucky/ps-data-node
 [PrestaShop]: https://www.prestashop.com
