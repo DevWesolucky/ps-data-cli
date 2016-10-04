@@ -30,6 +30,6 @@ export class Product
     /**
      * Array of product images
      */
-    public prestaProductImageSet:Array<ProductImage> = new Array();
+    public productImagesArr:Array<ProductImage> = new Array();
     
 }

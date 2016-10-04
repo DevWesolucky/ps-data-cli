@@ -18,9 +18,21 @@ export class ProductService
    * @param id The id of selected shop
    * @return Observable with array of products
    */
-  public getProductsListByShopId(id:number):Observable<Product[]>
+  public getAllProductsByShopId(shopId:number):Observable<Product[]>
   {
-    return this.http.get(API_ENDPOINT + "/shops/products/h2/" + id)
+    return this.http.get(API_ENDPOINT + "/products/shop/" + shopId)
+                    .map(this.extractData);
+  }
+
+  /**
+   * Get selected product from selected shop.
+   * 
+   * @param id The id in default source of selected product
+   * @return Observable with product
+   */
+  public getProductByShopIdAndId(shopId:number, id:number):Observable<Product>
+  {
+    return this.http.get(API_ENDPOINT + "/products/shop/" + shopId + "/product/" + id)
                     .map(this.extractData);
   }
 
@@ -32,24 +44,11 @@ export class ProductService
    * @param id The id of selected shop
    * @return Observable with array of products
    */
-  public getMySqlProductsByShopId(id:number):Observable<Product[]>
+  public getPrestaProductsByShopId(id:number):Observable<Product[]>
   {
-    return this.http.get(API_ENDPOINT + "/shops/products/presta/" + id)
+    return this.http.get(API_ENDPOINT + "/products/presta/shop/" + id)
                     .map(this.extractData);
-  }
-
-  /**
-   * Get selected product from selected shop.
-   * 
-   * @param shopId The id of selected shop
-   * @param id The id of selected product
-   * @return Observable with product
-   */
-  public getProductByShopIdAndId(shopId:number, id:number):Observable<Product>
-  {
-    return this.http.get(API_ENDPOINT + "/shop/" + shopId + "/product/" + id)
-                    .map(this.extractData);
-  }
+  } 
 
 
   private extractData(response:Response):any

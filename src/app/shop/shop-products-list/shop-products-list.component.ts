@@ -30,13 +30,13 @@ export class ShopProductsListComponent implements OnInit
   {
     this.shopId = this.getRouteIdParm();
     Logger.debug(":: ShopProductsComponent.ngOnInit > shopId: " + this.shopId);
-    this.getProductsListByShopId(this.shopId);
+    this.getAllProductsByShopId(this.shopId);
   }
 
-  private getProductsListByShopId(id:number):void
+  private getAllProductsByShopId(id:number):void
   {
     this.dataState = DATA_LOADING;
-    this.productService.getProductsListByShopId(id)
+    this.productService.getAllProductsByShopId(id)
                     .subscribe(
                         items => this.productsList = items,
                         error => this.onDataFailed(error),
@@ -44,10 +44,11 @@ export class ShopProductsListComponent implements OnInit
                       );
   }
 
-  private getMySqlProducts():void
+  // enforce fresh presta data
+  private getPrestaProductsByShopId():void
   {
     this.dataState = DATA_LOADING;
-    this.productService.getMySqlProductsByShopId(this.shopId)
+    this.productService.getPrestaProductsByShopId(this.shopId)
                     .subscribe(
                         items => this.productsList = items,
                         error => this.onDataFailed(error),
@@ -58,7 +59,7 @@ export class ShopProductsListComponent implements OnInit
 
   private showProductDetails(product:Product):void
   {
-    let link = ['shop', this.shopId, 'product', product.id];
+    let link = ['shops', product.shopId, 'products', product.id];
     this.router.navigate(link);
   }
 
@@ -85,7 +86,7 @@ export class ShopProductsListComponent implements OnInit
   {
     let id:number = -1;
     this.activatedRoute.params.forEach((params: Params) => {
-      id = +params['id'];
+      id = +params['shopId'];
     });
     return id;
   }

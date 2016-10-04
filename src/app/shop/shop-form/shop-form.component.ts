@@ -93,7 +93,7 @@ export class ShopFormComponent implements OnInit
   {
     let id:number = -1;
     this.activatedRoute.params.forEach((params: Params) => {
-      id = +params['id'];
+      id = +params['shopId'];
     });
     return id;
   }

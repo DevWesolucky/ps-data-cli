@@ -21,7 +21,7 @@
                 <td>{{product.attributeName}}</td>
                 <td>{{product.productId}}</td>
                 <td>{{product.attributeProductId}}</td>
-                <td>{{product.prestaProductImageSet.length}}</td>
+                <td>{{product.productImagesArr.length}}</td>
                 <td>
                     <button type="button" class="btn btn-info" (click)="showProductDetails(product)">
                         View details
@@ -35,7 +35,7 @@
             </tr>
         </table>
 
-        <button type="button" class="btn btn-warning" (click)="getMySqlProducts()">
+        <button type="button" class="btn btn-warning" (click)="getPrestaProductsByShopId()">
             Get MySQL products
         </button>
     </div>

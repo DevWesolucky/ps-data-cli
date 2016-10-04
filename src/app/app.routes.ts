@@ -13,15 +13,17 @@ const routes:Routes = [
     component: ShopsListComponent
   },
   {
-    path: 'shop/:id/edit',
+    path: 'shops/:shopId/edit',
     component: ShopFormComponent
   },
   {
-    path: 'shop/:id/products',
+    // path: 'products/default/shop/:id',
+    path: 'shops/:shopId/products',
     component: ShopProductsListComponent
   },
   {
-    path: 'shop/:shopId/product/:id',
+    // path: 'products/default/:id',
+    path: 'shops/:shopId/products/:id',
     component: ProductDetailsComponent
   },
   {

@@ -20,9 +20,8 @@ export class ProductDetailsComponent implements OnInit
   private product:Product;
   private failureMsg:string = "";
   private dataState:string;
-  private currentShopId:number;
   private currentId:number;
-
+  private shopId:number;
   private currentImgIndex:number = 0;
   private imgSet:Array<Object> = new Array();
   private dataSet:Array<Object> = new Array();
@@ -36,16 +35,16 @@ export class ProductDetailsComponent implements OnInit
   {
     Logger.debug(":: ProductDetailsComponent.ngOnInit")
     this.parseRouteParams();
-    this.getProductByShopIdAndProductId(this.currentShopId, this.currentId);
+    this.getProductByShopIdAndId(this.shopId, this.currentId);
   }
 
 
 
-  private getProductByShopIdAndProductId(shopId:number, id:number):void
+  private getProductByShopIdAndId(shopId:number, id:number):void
   {
     this.product = new Product();
     this.dataState = DATA_LOADING;
-    Logger.debug("ProductDetailsComponent.getProductByShopIdAndProductId ");
+    Logger.debug("ProductDetailsComponent.getDefaultProductById ");
     this.productService.getProductByShopIdAndId(shopId, id)
                     .subscribe(
                         product => this.onDataSuccess(product),
@@ -59,7 +58,7 @@ export class ProductDetailsComponent implements OnInit
     Logger.debug("ProductDetailsComponent.onDataSuccess");
     this.product = product;
     this.recursivelyIterateProperties(this.product);
-    this.imgSet = product.prestaProductImageSet;
+    this.imgSet = product.productImagesArr;
   }
 
   private recursivelyIterateProperties(obj) 
@@ -112,8 +111,8 @@ export class ProductDetailsComponent implements OnInit
   private parseRouteParams():void
   {
     this.activatedRoute.params.forEach((params: Params) => {
-      this.currentShopId = +params['shopId'];
       this.currentId = +params['id'];
+      this.shopId = +params['shopId'];
     });
   }
 

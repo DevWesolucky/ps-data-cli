@@ -73,14 +73,15 @@ export class ShopsListComponent implements OnInit
   private viewShop(shop:Shop):void
   {
     Logger.debug("ShopsListComponent.viewShop > id: " + shop.id);
-    let link = ['shop', shop.id, 'products'];
+    // let link = ['shop', shop.id, 'products'];
+    let link = ['shops', shop.id, 'products'];
     this.router.navigate(link);
   }
 
   private editShop(shop:Shop):void
   {
     Logger.debug("ShopsListComponent.editShop > id: " + shop.id);
-    let link = ['shop', shop.id, 'edit'];
+    let link = ['shops', shop.id, 'edit'];
     this.router.navigate(link);
   }
 
@@ -88,7 +89,7 @@ export class ShopsListComponent implements OnInit
   {
     Logger.debug("ShopsListComponent.showNewShopForm");
     // parameter id == 0 as flag to create new shop object
-    let link = ['shop', 0, 'edit'];
+    let link = ['shops', 0, 'edit'];
     this.router.navigate(link);
   }
 
